@@ -51,11 +51,11 @@ function sendEmail() {
           "Happy birthday, dear" + row[0] + "!"
         );
       } else {
-        console.log("No birthdays today");
+        // Do nothing
       }
     })
     .on("end", function () {
-      console.log("You've run out of friends to email");
+      console.log("No emails sent as it's no one's birthday today");
     })
     .on("error", function (error) {
       console.log(error.message);
@@ -79,18 +79,17 @@ function sendSMS() {
       ) {
         console.log("Happy birthday, dear" + row[0] + "!");
       } else {
-        console.log("No birthdays today");
+        // Do nothing
       }
     })
     .on("end", function () {
-      console.log("You've run out of friends to text");
+      console.log("No SMS sent as it's no one's birthday today");
     })
     .on("error", function (error) {
       console.log(error.message);
     });
 }
 
-console.log(detailedDate);
 readFromCSV();
 sendEmail();
 sendSMS();
